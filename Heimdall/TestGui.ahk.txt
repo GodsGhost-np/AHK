@@ -1,0 +1,17 @@
+Gui, Destroy
+				Gui, +Resize
+				Gui, Font, cBlack
+				Gui, Add, Text, , %Finalop%
+				Gui, Font, cBlue
+				Gui, Add, Text,gGotoSite, %link%
+				Gui, Font, cBlack
+				Gui, Show, , Heimdall
+				Return
+				
+				GuiClose:
+				Gui Cancel
+				GotoSite:
+				Run, %A_GuiControl%
+				Finalop :=
+				link :=
+				return

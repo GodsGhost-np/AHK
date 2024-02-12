@@ -1,0 +1,51 @@
+22 10 00 	Confirm EyeQ goes to Running vision
+22 10 03 	Commit ID
+22 10 14 	voltage level
+22 10 74 	unlock ECU/Superuser
+22 1A 20 	Temperature
+22 1A 3C 	 ASIL level degradation
+22 1A 3C 	degradation fault reaction class
+22 1D 29 	STS_Adaptation Status Signals
+22 2C 56 	VKMS training counter
+22 2C 60 	VKMS keys
+22 F1 7C   	to read FAZIT ID
+22 F1 A3 	 Confirm HW Version “H09”
+22 F1 AB 	 Read SW Block Identification
+22 1a 27  	fan
+22 08 01 	Heater
+2E 10 1A 00 	This will deactivate watch dog
+2e 10 1e 05  Super user
+2e 1D 01 80  	XCP connect 22 1d 01 to read
+31 03 F1 24
+22 f1 90 	VIN inside the sensor 
+22 2C 55 	VIN from RBS
+22 01 74  	Super User
+22 10 3C  	Production mode
+22 09 05 	Manual cal results
+22 10 06 	CAM init layout
+22 10 0A 	HCA persistent data
+22 1A 0A 	Dataset version
+22 1A 34    HCA ERC
+22 f1 86    Current diag session
+22 10 1A    WDG enabled (ex: 62 10 1A 80 - enabled)
+22 F1 87    HW part num
+22 F1 91    HW part num
+22 F1 E3   Logistics part number (SW)
+22 10 27 	EyeQ, MCU, aurix resets :: Reset Increement counter
+****************************************
+31 01 C0 0A 00<token with ISkey> - VKMSlearning 
+****************************************
+SFD Unlocking
+31 01 C0 08 05 - initial response 
+if ECU already individualised use 31 01 C0 08 02
+31 01 C0 04 <token> - unlock the ecu
+31 01 C0 05 - lock the ecu again
+22 01 74
+****************************************
+E2E for Coding
+31 01 C0 08 07 - E2E get the response
+Upload in VW SFD and get the response
+31 01 C0 11 - E2E
+31 01 C0 12 01 - To come out of E2E
+****************************************
+31 01 029b - Fast sleep
